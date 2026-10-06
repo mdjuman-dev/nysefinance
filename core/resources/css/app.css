@@ -1,0 +1,129 @@
+@import "tailwindcss";
+
+@source "../js/**/*.vue";
+@source "../views/app.blade.php";
+
+@theme {
+    --font-sans: "Inter", ui-sans-serif, system-ui, -apple-system, "Segoe UI", sans-serif;
+    --font-mono: "JetBrains Mono", ui-monospace, monospace;
+
+    --color-ink-950: #06070a;
+    --color-ink-900: #0b0d12;
+    --color-ink-850: #10131a;
+    --color-ink-800: #151922;
+    --color-ink-700: #1f2430;
+    --color-ink-600: #2b3241;
+
+    --color-brand-300: #c8f25a;
+    --color-brand-400: #8fe35c;
+    --color-brand-500: #3fd46e;
+    --color-brand-600: #22b455;
+
+    --color-up: #22c55e;
+    --color-down: #f43f5e;
+
+    --animate-marquee: marquee 40s linear infinite;
+    --animate-float: float 6s ease-in-out infinite;
+    --animate-pulse-dot: pulse-dot 2s ease-in-out infinite;
+
+    @keyframes marquee {
+        from { transform: translateX(0); }
+        to { transform: translateX(-50%); }
+    }
+    @keyframes float {
+        0%, 100% { transform: translateY(0); }
+        50% { transform: translateY(-10px); }
+    }
+    @keyframes pulse-dot {
+        0%, 100% { opacity: 1; }
+        50% { opacity: .35; }
+    }
+}
+
+@layer base {
+    html { scroll-behavior: smooth; }
+    ::selection { background: color-mix(in oklab, var(--color-brand-500) 35%, transparent); }
+}
+
+@utility container-x { @apply mx-auto w-full max-w-7xl px-4 sm:px-6 lg:px-8; }
+
+@utility card {
+    @apply rounded-2xl border border-white/[0.06] bg-ink-900/70 backdrop-blur-xl;
+}
+@utility card-hover {
+    @apply transition duration-300 hover:-translate-y-1 hover:border-brand-500/30 hover:bg-ink-850;
+}
+
+@utility btn {
+    @apply inline-flex items-center justify-center gap-2 rounded-xl px-5 py-2.5 text-sm font-semibold transition duration-200 focus:outline-none focus-visible:ring-2 focus-visible:ring-brand-400/60 disabled:opacity-60;
+}
+@utility btn-primary {
+    @apply btn bg-brand-500 text-ink-950 shadow-[0_8px_30px_-8px] shadow-brand-500/60 hover:bg-brand-400;
+}
+@utility btn-ghost {
+    @apply btn border border-white/10 bg-white/[0.03] text-zinc-100 hover:border-white/20 hover:bg-white/[0.07];
+}
+
+@utility eyebrow {
+    @apply inline-flex items-center gap-2 rounded-full border border-brand-500/20 bg-brand-500/10 px-3 py-1 text-xs font-semibold tracking-wide text-brand-300 uppercase;
+}
+
+@utility text-gradient {
+    @apply bg-gradient-to-r from-brand-300 via-brand-400 to-brand-500 bg-clip-text text-transparent;
+}
+
+@utility field {
+    @apply w-full rounded-xl border border-white/10 bg-ink-850 px-4 py-3 text-sm text-zinc-100 placeholder:text-zinc-500 transition focus:border-brand-500/60 focus:outline-none focus:ring-4 focus:ring-brand-500/10 read-only:opacity-70;
+}
+
+@layer components {
+    .grid-bg {
+        background-image:
+            linear-gradient(to right, rgb(255 255 255 / .035) 1px, transparent 1px),
+            linear-gradient(to bottom, rgb(255 255 255 / .035) 1px, transparent 1px);
+        background-size: 56px 56px;
+        mask-image: radial-gradient(ellipse 80% 60% at 50% 0%, #000 40%, transparent 100%);
+    }
+
+    /* CMS HTML (pasted from Word) carries inline colours meant for a white page. */
+    .cms-content { @apply text-[15px] leading-7 text-zinc-300; }
+    .cms-content * {
+        color: inherit !important;
+        background: transparent !important;
+        font-family: inherit !important;
+        font-size: inherit !important;
+        line-height: inherit !important;
+    }
+    .cms-content h1, .cms-content h2, .cms-content h3, .cms-content h4 {
+        @apply mt-8 mb-3 font-semibold tracking-tight text-white!;
+    }
+    .cms-content h1 { @apply text-2xl!; }
+    .cms-content h2 { @apply text-xl!; }
+    .cms-content h3, .cms-content h4 { @apply text-lg!; }
+    .cms-content p { @apply my-3; }
+    .cms-content ul, .cms-content ol { @apply my-3 list-disc space-y-1.5 pl-6 marker:text-brand-400; }
+    .cms-content ol { @apply list-decimal; }
+    .cms-content a { @apply text-brand-300! underline underline-offset-4; }
+    .cms-content strong, .cms-content b { @apply font-semibold text-zinc-100!; }
+    .cms-content table { @apply my-4 w-full border-collapse text-sm; }
+    .cms-content td, .cms-content th { @apply border border-white/10 px-3 py-2; }
+}
+
+@layer base {
+    * { scrollbar-width: thin; scrollbar-color: rgb(255 255 255 / .12) transparent; }
+    ::-webkit-scrollbar { width: 8px; height: 8px; }
+    ::-webkit-scrollbar-thumb { background: rgb(255 255 255 / .12); border-radius: 9999px; }
+    ::-webkit-scrollbar-track { background: transparent; }
+}
+
+/* Server-rendered viser form fields (withdraw networks, P2P payment info). */
+/* Style the server-rendered viser form controls to match the sheet. */
+.viser-fields label { display: block; margin-bottom: .5rem; font-size: .875rem; font-weight: 500; color: rgb(212 212 216); }
+.viser-fields input:not([type=checkbox]):not([type=radio]):not([type=file]), .viser-fields select, .viser-fields textarea {
+    width: 100%; border-radius: .75rem; border: 1px solid rgb(255 255 255 / .1); background: var(--color-ink-850);
+    padding: .75rem 1rem; font-size: .875rem; color: rgb(244 244 245);
+}
+.viser-fields input:focus, .viser-fields select:focus, .viser-fields textarea:focus { outline: none; border-color: color-mix(in oklab, var(--color-brand-500) 60%, transparent); }
+.viser-fields .form-group { margin-bottom: .75rem; }
+.viser-fields small, .viser-fields .text-muted { font-size: .7rem; color: rgb(113 113 122); }
+.viser-fields button[type=submit], .viser-fields .btn { margin-top: .75rem; width: 100%; border-radius: .75rem; background: var(--color-brand-500); padding: .75rem; font-weight: 600; color: var(--color-ink-950); }

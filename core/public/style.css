@@ -1,0 +1,277 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: sans-serif;
+}
+.white{
+    color: #fff;
+}
+h6{
+    margin: 0;
+    font-size: 13px;
+}
+body{
+    background-color: #000000;
+}
+a{
+    text-decoration: none;
+}
+.header-section-content{
+    padding: 10px 0px;
+}
+.right-back-action{
+    color: #fff;
+    font-size: 15px;
+}
+.main-section{
+    margin-bottom: 20px;
+}
+/* .container{
+    padding-left: 15px !important;
+    padding-right: 25px !important;
+} */
+.search-bar{
+    background-color: #131010;
+    border-radius: 50px;
+    font-size: 13px;
+    height: 30px;
+    padding-left: 30px;
+    padding-right: 30px;
+    border: none !important;
+    outline: none !important;
+}
+.form-control:focus {
+    color: #fff;
+    background-color: #131010;
+    border-color: #131010;
+    outline: 0;
+    box-shadow: none !important;
+}
+.find-input{
+    position: relative;
+}
+.find-icon{
+    position: absolute;
+    top: 8px;
+    left: 8px;
+    font-size: 13px;
+}
+.my-favorites{
+    margin-top: 20px;
+}
+.my-favorites-icons{
+    background-color: #131010;
+    padding: 10px 10px;
+    border-radius: 8px;
+    margin-top: 10px;
+}
+.btn-edit{
+    background-color: #f99c26;
+    color: #000;
+    font-weight: 600;
+    padding: 3px 8px !important;
+    font-size: 12px;
+}
+.add-icons{
+    display: flex;
+    align-items: center;
+}
+.add-icon{
+    margin: 0px 3px;
+    color: #fff;
+}
+.add-icon i{
+    font-size: 13px;
+}
+.all-other-services{
+    margin-top: 30px;
+}
+.owl-nav-link {
+    font-size: 11px;
+    padding: 6px 10px;
+    border-radius: 0 !important;
+    color: #fff;
+}
+
+.owl-nav-link.active {
+    background-color: transparent !important;
+    border-bottom: 2px solid #f99c26;
+}
+.other-data-war{
+    color: #f99c26;
+    font-size: 11px;
+    font-weight: 600;
+}
+.trading-classic-type{
+    font-size: 12px;
+    font-weight: 600;
+    color: #fff;
+}
+.question{
+    color: #534f4f;
+}
+.trading-classic-content{
+    overflow-y: scroll;
+    height: 310px;
+    scrollbar-width: none;
+    -ms-overflow-style: none;
+}
+.trading-classic-content::-webkit-scrollbar {
+    display: none;
+}
+.trading-classic-content-box{
+    margin: 15px 0;
+    padding: 10px 10px;
+    background-image: url('./img/images.jfif');
+    background-size: cover;
+    background-position: center;
+    border-radius: 10px;
+    min-height: 200px;
+    max-height: 200px;
+}
+.trading-classic-content-box-header{
+    display: flex;
+    justify-content: space-between;
+}
+.star{
+color: #f99c26;
+font-size: 14px;
+margin-right: 5px;
+}
+.footer-section-content{
+    background-color: #131010;
+    padding: 10px 0px;
+}
+.footer-section-content ul{
+    display: flex;
+    justify-content: space-between;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+.footer-section-content li{
+    color: #fff;
+    text-align: center;
+    padding: 5px 10px;
+    font-size: 14px;
+}
+.footer-section-content li.active a{
+    color: rgb(247, 166, 0);
+}
+.footer-section-content li i{
+    font-size: 13px;
+}
+.footer-section{
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    padding: 8px 20px;
+    left: 0;
+}
+.btn-footer{
+    width: 100%;
+    height: 50px;
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    flex-flow: column;
+    background: rgb(247, 166, 0);
+    border-radius: 8px;
+    min-width: 260px;
+    padding: 0px 16px;
+    font-weight: 600;
+    font-size: 13px;
+    line-height: 24px;
+    color: rgb(16, 16, 20);
+    border: none;
+    user-select: none;
+}
+.btn-footer2{
+    color: rgb(247, 166, 0);
+    border: 1px solid rgb(247, 166, 0);
+    background: transparent;
+}
+.trade-copy-btn{
+    padding: 6px 15px !important;
+}
+.dashboard-header{
+    display: none !important;
+}
+.dashboard-body{
+    padding-top: 0px !important;
+    margin-top: 0px !important;
+}
+.mobile-footer-menu{
+    display: none !important;
+}
+.nv-copy-tab-btn:hover{
+color: white !important;
+}
+.header-title,.header-title h6{
+    font-size: 20px !important;
+    font-weight: 700;
+    color: white !important;
+}
+
+#buyCopyTradeModal .modal-content {
+    background: #222223 !important;
+}
+#buyCopyTradeModal .btn-confirm{
+    background: #f7a700 !important;
+}
+
+
+#withdrawCopyTradeModal .modal-content {
+    background: #222223 !important;
+}
+#withdrawCopyTradeModal .btn-confirm{
+    background: #f7a700 !important;
+}
+.all-other-services .nav-link{
+    font-size: 14px !important;
+}
+.btn-edit {
+    background-color: #f99c26 !important;
+    color: #000 !important;
+    font-weight: 600 !important;
+    padding: 7px 17px !important;
+    font-size: 12px !important;
+}
+.right-back-action:hover{
+    color: hsl(44.87deg 100% 77.45%) !important;
+    font-weight: 900 !important;
+}
+.right-back-action i{
+    font-size: 20px !important;
+    font-weight: 900 !important;
+}
+.main-trade-note-section h6{
+    font-size: 13px;
+    color: white !important;
+    border-bottom: 1px solid #f7a700;
+    margin-bottom: 11px;
+}
+.main-trade-note-section .trade-note-section{
+    font-size: 11px !important;
+}
+.main-trade-note-section{
+    background: #000000;
+    padding: 10px;
+    border-radius: 10px;
+    height: 137px;
+    overflow-x: hidden;
+    overflow-y: scroll;
+}
+.details-section h6{
+    font-size: 15px !important;
+}
+.details-section{
+    background: #000000;
+    padding: 10px;
+    border-radius: 10px;
+    font-size: 16px;
+}
+.interest_type,.cost,.interest,.current-balance{
+    color: #ffac00 !important;
+}
